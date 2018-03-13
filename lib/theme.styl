@@ -1,0 +1,75 @@
+// Bespoke Classes: https://github.com/markdalgleish/bespoke-classes
+// Stylus: http://learnboost.github.io/stylus
+
+@import 'normalizecss/normalize.css'
+
+.bespoke-slide
+  aside.notes
+    display: none
+
+.bespoke-presenter-wrapper
+  display: flex
+  flex-direction: row
+  with: 100vw
+  height: 100vh
+  background: #222
+
+.bespoke-presenter-slide-wrapper
+  width: 100%
+  height: 100%
+  position: relative
+  box-shadow: 0 0 5px #222
+
+.bespoke-presenter-current-pane, .bespoke-presenter-presenter-pane
+  width: 50%
+  height: 100%
+  position: relative
+
+.bespoke-presenter-current-pane
+  box-sizing: border-box
+  padding: 0.5rem
+
+.bespoke-presenter-presenter-pane
+  display: flex
+  flex-direction: column
+
+.bespoke-presenter-notes-pane
+  height: 50%
+  box-sizing: border-box
+  padding: 1rem;
+  display: flex
+  flex-flow: column
+  justify-content: center
+  align-items: center
+  color: #f0f0f0
+  overflow: auto
+
+.bespoke-presenter-presenter-bottom-pane
+  height: 50%
+  display: flex
+  flex-direction: row
+  position: relative;
+
+.bespoke-presenter-preview-pane
+  width: 50%
+  height: 100%
+  position: relative
+
+  .bespoke-inactive
+    opacity: 1
+    visibility: visible
+
+  .bespoke-bullet-inactive
+    opacity: 1
+    visibility: visible
+
+.bespoke-presenter-status-pane
+  width: 50%
+  height: 100%
+  display: flex
+  flex-flow: column
+  justify-content: center
+  align-items: center
+  color: #f0f0f0
+  font-size: 14pt
+  font-weight: 900
