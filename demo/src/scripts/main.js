@@ -1,17 +1,17 @@
 var bespoke = require('bespoke'),
+  cube = require('bespoke-theme-cube'),
   bespokePresenter = require('../../../lib/bespoke-presenter.js'),
   keys = require('bespoke-keys'),
   touch = require('bespoke-touch'),
   bullets = require('bespoke-bullets'),
-  scale = require('bespoke-scale'),
   progress = require('bespoke-progress'),
   backdrop = require('bespoke-backdrop');
 
 bespoke.from('article', [
-  bespokePresenter(),
+  cube(),
   keys(),
   touch(),
   bullets('li, .bullet'),
   progress(),
-  backdrop()
+  bespokePresenter()
 ]);
