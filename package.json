@@ -19,6 +19,9 @@
   "scripts": {
     "test": "gulp"
   },
+  "files": [
+      "dist"
+  ],
   "peerDependencies": {
     "bespoke": ">=1.0.0"
   },
