@@ -36,6 +36,7 @@
     "bespoke-touch": "^1.0.0",
     "brfs": "^1.1.1",
     "browserify": "^4.1.5",
+    "del": "^3.0.0",
     "function-bind": "^0.1.0",
     "gh-pages": "^0.2.0",
     "gulp": "^3.5.1",

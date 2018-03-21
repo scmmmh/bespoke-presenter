@@ -6,6 +6,7 @@ var gulp = require('gulp'),
   uglify = require('gulp-uglify'),
   stylus = require('gulp-stylus'),
   autoprefixer = require('gulp-autoprefixer'),
+  del = require('del'),
   csso = require('gulp-csso'),
   jade = require('gulp-jade'),
   connect = require('gulp-connect'),
@@ -23,7 +24,7 @@ gulp.task('default', ['clean', 'compile']);
 gulp.task('demo', ['compile', 'watch', 'connect']);
 gulp.task('compile', ['compile:lib', 'compile:demo']);
 gulp.task('compile:lib', ['stylus', 'browserify:lib']);
-gulp.task('compile:demo', ['jade', 'browserify:demo']);
+gulp.task('compile:demo', ['jade', 'images:demo', 'browserify:demo']);
 
 gulp.task('watch', function() {
   gulp.watch('lib/*', ['compile:lib', 'browserify:demo']);
@@ -52,6 +53,10 @@ gulp.task('clean:stylus', function() {
 gulp.task('clean:jade', function() {
   return gulp.src(['demo/dist/index.html'], { read: false })
     .pipe(clean());
+});
+
+gulp.task('clean:images:demo', function() {
+  return del('demo/dist/**/images');
 });
 
 gulp.task('stylus', ['clean:stylus'], function() {
@@ -105,6 +110,12 @@ gulp.task('jade', ['clean:jade'], function() {
   return gulp.src('demo/src/index.jade')
     .pipe(isDemo ? plumber() : through())
     .pipe(jade({ pretty: true }))
+    .pipe(gulp.dest('demo/dist'))
+    .pipe(connect.reload());
+});
+
+gulp.task('images:demo', ['clean:images:demo'], function() {
+  return gulp.src('demo/src/**/images/**/*')
     .pipe(gulp.dest('demo/dist'))
     .pipe(connect.reload());
 });
