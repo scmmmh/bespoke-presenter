@@ -1,8 +1,14 @@
 # Bespoke Presenter View
 
+**THIS PROJECT IS NO LONGER MAINTAINED**
+
 This repository contains the bespoke plugin that generates a presenter view.
 
 ## Changes
+
+### 1.0.5
+
+* **UPDATE**: End-of-Life
 
 ### 1.0.4
 
